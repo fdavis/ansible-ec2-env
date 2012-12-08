@@ -1,0 +1,12 @@
+---
+ - name: default tool installer
+   hosts: all
+   user: root
+
+   vars_files:
+     - vars/default_yum_install_pkgs.yml
+
+   tasks:
+     - name: install defaults 
+       yum: name=${item} state=latest
+       with_items: ${default_pkgs}

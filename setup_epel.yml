@@ -1,0 +1,11 @@
+---
+  - name: setup epel
+    hosts: all
+    user: root
+
+    tasks:
+      - name: copy over epel release rpm
+        copy: src=files/epel-release-6-7.noarch.rpm dest=/tmp/epel-release-6-7.noarch.rpm
+
+      - name: rpm install epel
+        command: rpm -ivh /tmp/epel-release-6-7.noarch.rpm

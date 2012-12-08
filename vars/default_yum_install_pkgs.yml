@@ -1,0 +1,18 @@
+---
+default_pkgs:
+ - vim
+ - gedit
+ - emacs
+ - evince
+ - gcalctool
+ - firefox
+ - gthumb
+ - gdb
+ - coreutils
+ - clang
+ - gcc
+ - gcc-c++
+ - facter
+ - file-roller
+ - rdesktop
+
