@@ -1,0 +1,3 @@
+---
+  - name: adding a user
+    user: name=$user_name password=$user_password createhome=yes

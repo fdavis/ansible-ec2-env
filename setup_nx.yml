@@ -1,0 +1,20 @@
+---
+- hosts: all
+  user: root
+
+  vars_files:
+   - vars/hidden.yml
+
+  tasks:
+  - include: tasks/freenx-install.yml
+
+  - include: tasks/copy-nx-node-config.yml
+
+  - include: tasks/freenx-setup.yml
+
+  - include: tasks/useradd-user.yml
+
+  - include: tasks/copy-sshd-config.yml
+
+  handlers:
+  - include: handlers/restart_services.yml

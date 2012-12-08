@@ -1,0 +1,4 @@
+---
+  - name: Copying over nx config
+    copy: copy src=files/node.conf dest=/etc/nxserver/node.conf mode=0755 backup=yes
+

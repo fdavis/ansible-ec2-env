@@ -1,0 +1,5 @@
+---
+# ignores errors because this will return warning and error messages on success ...
+  - name: Setup freenx
+    command: nxsetup --install --setup-nomachine-key
+    ignore_errors: True

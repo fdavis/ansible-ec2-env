@@ -1,0 +1,30 @@
+---
+- name: make an instance
+  user: fdavis
+  hosts: local
+  gather_facts: False
+
+  vars_files:
+  - vars/default_ec2_conf.yml
+
+  tasks:
+  - name: make an instance
+    ec2: keypair=${keypair} image=${image} type=${instance_type} group=${security_group} wait=true 
+    register: new_reservation
+
+  - name: add host to temp inventory
+    add_host: hostname=${new_reservation.instances[0].public_ip} groupname=new_ec2_box
+
+  - name: mail off about where it is
+    mail: to=fdavi001@ucr.edu from=ansible-create-ec2@fletchertdavis.com subject="${inst_res.instances[0].public_ip} - ${inst_res.instances[0].id}" msg="cloud instance created on ${inst_res.instances[0].public_ip}\n instance id - ${inst_res.instances[0].id} "
+
+  - name: wait for the host to be hot
+    wait_for: host=${inst_res.instances[0].public_ip} port=22 delay=5 timeout=1000
+
+- name: try to pass it a file
+  user: root
+  hosts: new_ec2_box
+
+  tasks:
+  - name: copy example file
+    copy: src=files/example.file dest=/tmp/example.file

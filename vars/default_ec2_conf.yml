@@ -1,0 +1,7 @@
+---
+# The keypair I made with euca-create-keypair
+keypair: ec2-ans
+# An AMI from Centos.org: Centos 6 Updated
+image: ami-f61630b3
+instance_type: m1.small
+security_group: default

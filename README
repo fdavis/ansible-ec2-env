@@ -1,0 +1,3 @@
+Make a key using: euca-create-keypair | tail -n+2 > key/ec2-ans.pem
+Test Startup cmd: euca-run-instances -k nx_box ami-f61630b3
+run any instance launching plays with -i inv/default so it starts with localhost

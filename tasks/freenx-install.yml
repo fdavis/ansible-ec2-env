@@ -1,0 +1,9 @@
+---
+  - name: yum install freenx nx
+    yum: name=$item state=latest
+    with_items: 
+      - nx
+      - freenx
+
+  - name: yum groupinstall X Window System and Gnome Desktop
+    command: yum groupinstall -y 'X Window System' Desktop

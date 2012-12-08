@@ -1,0 +1,3 @@
+---
+  - name: restart sshd
+    action: command service sshd restart
