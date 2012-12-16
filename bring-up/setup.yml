@@ -2,6 +2,7 @@
 - name: make an instance
   user: fdavis
   hosts: local
+  connection: paramiko
   gather_facts: False
 
   vars_files:

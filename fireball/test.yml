@@ -1,0 +1,15 @@
+---
+# set up the fireball transport
+- hosts: all
+  user: root
+  gather_facts: False
+  connection: paramiko
+  tasks:
+      - action: fireball
+
+# these operations will occur over the fireball transport
+- hosts: all
+  user: root
+  connection: fireball
+  tasks:
+      - action: ping 

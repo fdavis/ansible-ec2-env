@@ -25,20 +25,6 @@ A few commands I used tinkering:
 
 [1]: http://skvidal.wordpress.com/2012/11/02/euca-terminate-instances/
 
-
-TODO phase 1:
-* setup group allows fireball
-* refactor to use fireball
-* refactor installs, make grouplist
-1. Debugging Tools
-2. Development tools
-3. Scientific support
-4. TeX support
-5. Technical Writing
-6. X Window System
-7. Desktop
-* refactor installs, add nx freenx to default list, make default list nx server list
-
 TODO phase 2:
 * setup auth server
 * allow multi nx servers to single auth server

@@ -1,0 +1,18 @@
+---
+- hosts: all
+  user: root
+  gather_facts: False
+  connection: paramiko
+  tasks:
+    - yum: name=${item} state=latest
+       with_items:
+         - zeromq
+         - zeromq-devel
+         - python-devel
+     - action: easy_install name=pip
+     - action: pip name=$item state=present
+       with_items:
+         - pyzmq
+         - pyasn1
+         - PyCrypto
+         - python-keyczar
