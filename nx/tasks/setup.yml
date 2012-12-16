@@ -1,0 +1,20 @@
+---
+- name: yum install packages
+  yum: name=${item} state=latest
+  with_items:
+       - nx
+       - freenx
+
+- name: yum group install X, Gnome
+  command: yum groupinstall -y ${item}
+  with_items:
+       - X Window System
+       - Desktop
+
+- name: copy node.conf
+  copy: src=files/node.conf dest=/etc/nxserver/node.conf owner=root mode=0555 backup=yes
+
+# ignores errors because this will return warning and error messages on success ...
+- name: Setup freenx
+  command: nxsetup --install --setup-nomachine-key
+  ignore_errors: True

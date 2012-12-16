@@ -1,0 +1,22 @@
+---
+- name: make an instance
+  user: fdavis
+  hosts: local
+  gather_facts: False
+
+  vars_files:
+  - vars/main.yml
+
+  tasks:
+  - name: make an instance
+    ec2: keypair=${keypair} image=${image} type=${instance_type} group=${security_group} wait=true 
+    register: inst_res
+
+  - name: mail off about where it is
+    mail: to=fdavi001@ucr.edu from=ansible-create-ec2@cs.ucr.edu subject="${inst_res.instances[0].public_ip} - ${inst_res.instances[0].id}" msg="cloud instance created on ${inst_res.instances[0].public_ip}\n instance id - ${inst_res.instances[0].id} "
+
+  - name: wait for the host to be hot
+    wait_for: host=${inst_res.instances[0].public_ip} port=22 delay=5 timeout=1000
+
+  - name: tag the new host
+    command: euca-create-tags --tag Class=nx_server ${inst_res.instances[0].id}

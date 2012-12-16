@@ -1,3 +1,5 @@
-key/ec2-ans.pem
+key/*
+!key/YOUR_KEYS_HERE
 *~
+*.swp
 *hidden*

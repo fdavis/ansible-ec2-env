@@ -1,0 +1,3 @@
+---
+- copy: src=files/ec2_sshd_config dest=/etc/ssh/sshd_config owner=root mode=0400 backup=yes
+  notify: restart sshd

@@ -1,0 +1,8 @@
+---
+- name: setup nx server
+  hosts: tag_Class_nx_server
+  user: root
+  gather_facts: False
+
+  tasks:
+    - include: tasks/setup.yml

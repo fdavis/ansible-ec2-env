@@ -1,0 +1,11 @@
+---
+- name: setup user tools for ec2 env
+  hosts: tag_Class_nx_server
+  user: root
+  gather_facts: False
+
+  vars_files:
+    - vars/main.yml
+
+  tasks:
+    - include: tasks/setup.yml
