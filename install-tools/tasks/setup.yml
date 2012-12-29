@@ -1,12 +1,4 @@
 ---
-- name: copy over epel release rpm
-  copy: src=files/epel-release-6-7.noarch.rpm dest=/tmp/epel-release-6-7.noarch.rpm
-  register: last_result
-
-- name: rpm install epel
-  command: rpm -ivh /tmp/epel-release-6-7.noarch.rpm
-  only_if: '${last_result.changed}'
-
 - name: yum pkgs install
   yum: name=${item} state=latest
   with_items: ${yum_pkgs}

@@ -1,5 +1,10 @@
 ---
+- name: configure nx servers
+  hosts: tag_Class_nx_server
+  user: root
+  connection: fireball
+
+- include: install-tools/setup.yml
 - include: sshd/setup.yml
 - include: nx/setup.yml
-- include: install-tools/setup.yml
 - include: add-user/setup.yml

@@ -3,10 +3,7 @@
   hosts: tag_Class_nx_server
   user: root
   gather_facts: False
-  connection: fireball
-
-  vars_files:
-    - vars/main.yml
+  connection: paramiko
 
   tasks:
     - include: tasks/setup.yml

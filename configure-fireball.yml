@@ -1,0 +1,9 @@
+---
+- name: configure nx servers
+  hosts: all
+  user: root
+  gather_facts: False
+  connection: paramiko
+
+- include: epel/setup.yml
+- include: fireball/setup.yml

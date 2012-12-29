@@ -26,8 +26,10 @@ A few commands I used tinkering:
 [1]: http://skvidal.wordpress.com/2012/11/02/euca-terminate-instances/
 
 TODO phase 2:
+* Add iptables firewall rule to allow tcp sport 5099 on all instances
 * setup auth server
 * allow multi nx servers to single auth server
+* RDP and VNC
 * refactor playbook folders and dependencies etc... respectively
 
 TODO phase 3:
@@ -36,3 +38,7 @@ TODO phase 3:
 * ubuntu 10.04 LTS
 * maybe try a solaris variant
 
+
+TODO phase 4:
+* render queue
+* job queue

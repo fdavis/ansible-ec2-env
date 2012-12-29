@@ -31,7 +31,6 @@ yum_groups:
  - Desktop Platform
  - Desktop Platform Development
  - Eclipse
- - Hardware monitoring utilities
  - Internet Applications
  - Legacy UNIX compatibility
  - Office Suite and Productivity

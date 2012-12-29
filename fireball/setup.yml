@@ -1,18 +1,27 @@
 ---
-- hosts: all
+- name: setup fireball
+  hosts: all
   user: root
   gather_facts: False
   connection: paramiko
   tasks:
     - yum: name=${item} state=latest
-       with_items:
-         - zeromq
-         - zeromq-devel
-         - python-devel
-     - action: easy_install name=pip
-     - action: pip name=$item state=present
-       with_items:
-         - pyzmq
-         - pyasn1
-         - PyCrypto
-         - python-keyczar
+      with_items:
+        - zeromq
+        - zeromq-devel
+        - python-devel
+        - python-setuptools 
+        - gcc-c++
+
+    - easy_install: name=pip
+
+    - pip: name=$item state=present
+      with_items:
+        - pyzmq
+        - pyasn1
+        - PyCrypto
+        - python-keyczar
+    
+    - command: iptables -I INPUT 1 -p tcp --sport 5099 -j ACCEPT
+
+    - action: fireball
