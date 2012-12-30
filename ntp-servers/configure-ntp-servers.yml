@@ -1,0 +1,7 @@
+---
+- name: configure ntp servers
+  hosts: tag_Class_ntp_server
+  user: root
+  connection: fireball
+
+- include: ntp/setup.yml

@@ -1,4 +1,5 @@
 #!/bin/bash
 ansible-playbook bring-up/setup.yml -i inv/default
-ansible-playbook configure-fireball.yml
-ansible-playbook configure-nx-servers.yml
+ansible-playbook all-servers/configure-fireball.yml
+ansible-playbook ntp-servers/configure-ntp-servers.yml
+ansible-playbook nx-servers/configure-nx-servers.yml

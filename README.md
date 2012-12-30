@@ -22,14 +22,30 @@ A few commands I used tinkering:
 * Test Startup cmd: euca-run-instances -k nx_box ami-f61630b3
 * run any instance launching plays with -i inv/default so it starts with localhost: ansible-playbook -i inv/default instance_up.yml
 * instance killer (requires ec2 tools): alias ec2-killall='ec2-describe-instances | grep INST | awk '\''{print $2}'\'' | ec2-terminate-instances -' ([Seth's euca-terminate-instance tool is much better] [1])
+* euca-create-group gname; euca-authorize gname -P proto -p port_number;
 
 [1]: http://skvidal.wordpress.com/2012/11/02/euca-terminate-instances/
 
+TODO phase 1:
+* setup group allows fireball
+* refactor to use fireball
+* refactor installs, make grouplist
+1. Debugging Tools
+2. Development tools
+3. Scientific support
+4. TeX support
+5. Technical Writing
+6. X Window System
+7. Desktop
+* refactor installs, add nx freenx to default list, make default list nx server list
+
 TODO phase 2:
+* Test bring up with list of items
 * Add iptables firewall rule to allow tcp sport 5099 on all instances
 * setup auth server
 * allow multi nx servers to single auth server
-* RDP and VNC
+* RDP and VNC for NX
+* RDP windows
 * refactor playbook folders and dependencies etc... respectively
 
 TODO phase 3:
