@@ -1,4 +1,6 @@
 ---
+- yum: name=ntp state=installed
+
 - command: iptables -I INPUT 1 -p udp --dport 123 -j ACCEPT
 
 - copy: src=files/ntp.conf dest=/etc/ntp.conf owner=root group=root mode=0600 backup=yes

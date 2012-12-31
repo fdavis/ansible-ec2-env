@@ -22,6 +22,6 @@
         - PyCrypto
         - python-keyczar
     
-    - command: iptables -I INPUT 1 -p tcp --sport 5099 -j ACCEPT
+    - command: iptables -I INPUT 1 -p tcp --dport 5099 -j ACCEPT
 
     - action: fireball

@@ -2,11 +2,10 @@
 - name: setup sshd for ec2 env
   hosts: tag_Class_nx_server
   user: root
-  gather_facts: False
   connection: fireball
 
   tasks:
     - include: tasks/setup.yml
 
   handlers:
-    - include: handlers/main.yml
+    - include: handlers/handlers.yml

@@ -1,0 +1,8 @@
+---
+- name: setup ntpd ec2 env
+  hosts: all:!tag_Class_ntp_server
+  user: root
+  connection: fireball
+
+  tasks:
+    - include: tasks/setup.yml

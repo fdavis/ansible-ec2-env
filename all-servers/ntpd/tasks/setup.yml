@@ -1,0 +1,8 @@
+---
+- yum: name=ntp state=installed
+
+- template: src=templates/ntp.conf dest=/etc/ntp.conf owner=root group=root mode=0600 backup=yes
+
+#- command: ntpdate INSERT MY EC2 NTP PUB DNS HERE??
+
+- service: name=ntpd state=started enabled=yes

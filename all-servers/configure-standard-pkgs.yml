@@ -1,0 +1,7 @@
+---
+- name: install generic pkgs
+  hosts: all
+  user: root
+  connection: fireball
+
+- include: standard-pkgs/setup.yml

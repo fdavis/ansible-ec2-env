@@ -5,6 +5,4 @@
   connection: fireball
 
 - include: install-tools/setup.yml
-- include: sshd/setup.yml
 - include: nx/setup.yml
-- include: add-user/setup.yml
