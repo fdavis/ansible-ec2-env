@@ -8,3 +8,4 @@ ansible-playbook all-servers/configure-fireball.yml
 ansible-playbook ntp-servers/configure-ntp-servers.yml
 ansible-playbook all-servers/configure-ntpd.yml
 ansible-playbook nx-servers/configure-nx-servers.yml
+ansible-playbook c9-servers/configure-c9-servers.yml

@@ -1,0 +1,8 @@
+---
+- name: update server
+  hosts: all
+  user: root
+  connection: fireball
+
+  tasks:
+    - command: yum update -y

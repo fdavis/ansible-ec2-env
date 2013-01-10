@@ -3,7 +3,7 @@
 servers:
   - keypair: ec2-ans
     image: ami-f61630b3
-    instance_type: m1.small
+    instance_type: m1.medium
     security_group: ssh_fireball
     tag: nx_server
 
@@ -18,3 +18,9 @@ servers:
     instance_type: t1.micro
     security_group: ssh_fireball
     tag: ntp_server
+
+  - keypair: ec2-ans
+    image: ami-f61630b3
+    instance_type: m1.medium
+    security_group: ec2_c9
+    tag: c9_server

@@ -1,0 +1,5 @@
+---
+yum_pkgs:
+ - kerb5-server
+ - kerb5-workstation
+ - kerb5-server-ldap

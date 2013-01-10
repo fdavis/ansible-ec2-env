@@ -1,0 +1,7 @@
+---
+- name: configure c9 servers
+  hosts: tag_Class_c9_server
+  user: root
+  connection: fireball
+
+- include: c9/setup.yml

@@ -1,0 +1,11 @@
+---
+- name: yum kerb5
+  hosts: tag_Class_krb_server
+  user: root
+  connection: fireball
+
+  vars_files:
+    - vars/main.yml
+
+  tasks:
+    - include: tasks/setup.yml

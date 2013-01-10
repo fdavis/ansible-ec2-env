@@ -1,0 +1,7 @@
+---
+- name: configure nx servers
+  hosts: tag_Class_krb_server
+  user: root
+  connection: fireball
+
+- include: install-tools/setup.yml

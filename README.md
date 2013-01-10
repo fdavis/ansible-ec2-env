@@ -20,6 +20,7 @@ Disclaimer: This is an experiemental repo. Please use EC2 responsibly.
 A few commands I used tinkering:
 * Make a key using: euca-create-keypair ec2-ans | tail -n+2 > key/ec2-ans.pem
 * Test Startup cmd: euca-run-instances -k nx_box ami-f61630b3
+* euca-run-instances -t m1.medium ami-f61630b3 -k ec2-ans -g apache-centos
 * run any instance launching plays with -i inv/default so it starts with localhost: ansible-playbook -i inv/default instance_up.yml
 * instance killer (requires ec2 tools): alias ec2-killall='ec2-describe-instances | grep INST | awk '\''{print $2}'\'' | ec2-terminate-instances -' ([Seth's euca-terminate-instance tool is much better] [1])
 * euca-create-group gname; euca-authorize gname -P proto -p port_number;
@@ -53,6 +54,7 @@ TODO phase 3:
 * another yum probably amazon linux for now
 * ubuntu 10.04 LTS
 * maybe try a solaris variant
+* when more than yum distros are deployed, we need 2+ update playbooks
 
 
 TODO phase 4:
