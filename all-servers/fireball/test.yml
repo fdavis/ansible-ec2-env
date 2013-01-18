@@ -10,6 +10,5 @@
 # these operations will occur over the fireball transport
 - hosts: all
   user: root
-  connection: fireball
   tasks:
       - action: ping 

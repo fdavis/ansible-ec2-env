@@ -2,7 +2,6 @@
 - name: install generic pkgs
   hosts: all
   user: root
-  connection: fireball
 
 - include: update-server/setup.yml
 - include: standard-pkgs/setup.yml

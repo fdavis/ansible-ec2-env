@@ -3,6 +3,5 @@
   hosts: all:!tag_Class_ntp_server
   user: root
   gather_facts: False
-  connection: fireball
 
 - include: ntpd/setup.yml

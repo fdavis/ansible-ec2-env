@@ -3,9 +3,9 @@
 # quit script on cmd fail
 set -e
 
-ansible-playbook bring-up/setup.yml -i inv/default
-ansible-playbook all-servers/configure-fireball.yml
-ansible-playbook ntp-servers/configure-ntp-servers.yml
-ansible-playbook all-servers/configure-ntpd.yml
-ansible-playbook nx-servers/configure-nx-servers.yml
-ansible-playbook c9-servers/configure-c9-servers.yml
+ansible-playbook -v bring-up/setup.yml -i inv/default
+#ansible-playbook -v all-servers/configure-fireball.yml
+ansible-playbook -v ntp-servers/configure-ntp-servers.yml
+ansible-playbook -v all-servers/configure-ntpd.yml
+ansible-playbook -v nx-servers/configure-nx-servers.yml
+ansible-playbook -v c9-servers/configure-c9-servers.yml

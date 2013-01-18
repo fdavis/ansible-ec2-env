@@ -14,7 +14,9 @@
 - command: mkdir -p /usr/pkgs
 - command: wget -q http://nodejs.org/dist/v0.8.16/node-v0.8.16-linux-x64.tar.gz -O /usr/pkgs/node-js.tar.gz
 - command: chdir=/usr/pkgs tar -xf /usr/pkgs/node-js.tar.gz 
-- lineinfile: dest=/etc/bashrc state=present regexp="export PATH=/usr/pkgs/node-v0.8.16-linux-x64/bin*" line="export PATH=/usr/pkgs/node-v0.8.16-linux-x64/bin:$PATH"
+#- lineinfile: dest=/etc/bashrc state=present regexp="export PATH=/usr/pkgs/node-v0.8.16-linux-x64/bin*" line="export PATH=/usr/pkgs/node-v0.8.16-linux-x64/bin:$PATH"
 - command: /usr/pkgs/node-v0.8.16-linux-x64/bin/npm install -g sm
-- command: creates=/usr/pkgs/cloud9/README.md chdir=/usr/pkgs export PATH=/usr/pkgs/node-v0.8.16-linux-x64/bin:$PATH && git clone https://github.com/ajaxorg/cloud9.git cloud9 
-- shell: chdir=/usr/pkgs/cloud9 export PATH=/usr/pkgs/node-v0.8.16-linux-x64/bin:$PATH && sm install && nohup /usr/pkgs/cloud9/bin/cloud9.sh --username user --password c9userpass -p 80 -l 0.0.0.0 & exit 0
+- command: /usr/pkgs/node-v0.8.16-linux-x64/bin/npm install -g forever
+- git: dest=/usr/pkgs/cloud9 repo=https://github.com/ajaxorg/cloud9.git
+- command: chdir=/usr/pkgs/cloud9 /usr/pkgs/node-v0.8.16-linux-x64/bin/sm install 
+- command: /usr/pkgs/node-v0.8.16-linux-x64/bin/forever start /usr/pkgs/cloud9/server.js --username user --password c9userpass -p 80 -l 0.0.0.0

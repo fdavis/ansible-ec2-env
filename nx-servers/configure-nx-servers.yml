@@ -2,7 +2,6 @@
 - name: configure nx servers
   hosts: tag_Class_nx_server
   user: root
-  connection: fireball
 
 - include: install-tools/setup.yml
 - include: nx/setup.yml

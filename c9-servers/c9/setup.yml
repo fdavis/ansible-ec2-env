@@ -2,7 +2,6 @@
 - name: setup nx server
   hosts: tag_Class_c9_server
   user: root
-  connection: fireball
 
   tasks:
     - include: tasks/setup.yml
