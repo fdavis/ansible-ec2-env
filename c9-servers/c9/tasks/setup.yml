@@ -18,5 +18,8 @@
 - command: /usr/pkgs/node-v0.8.16-linux-x64/bin/npm install -g sm
 - command: /usr/pkgs/node-v0.8.16-linux-x64/bin/npm install -g forever
 - git: dest=/usr/pkgs/cloud9 repo=https://github.com/ajaxorg/cloud9.git
-- command: chdir=/usr/pkgs/cloud9 /usr/pkgs/node-v0.8.16-linux-x64/bin/sm install 
-- command: /usr/pkgs/node-v0.8.16-linux-x64/bin/forever start /usr/pkgs/cloud9/server.js --username user --password c9userpass -p 80 -l 0.0.0.0
+- shell: chdir=/usr/pkgs/cloud9 export PATH=/usr/pkgs/node-v0.8.16-linux-x64/bin:$PATH && /usr/pkgs/node-v0.8.16-linux-x64/bin/sm install 
+- command: mkdir -p /workspace/user
+- command: chmod 1777 /workspace
+- shell: export PATH=/usr/pkgs/node-v0.8.16-linux-x64/bin:$PATH && /usr/pkgs/node-v0.8.16-linux-x64/bin/forever start /usr/pkgs/cloud9/server.js --username user --password c9userpass -p 80 -l 0.0.0.0 -w /workspace
+- copy: src=files/example.py dest=/workspace/example.py owner=root group=root mode=0444
