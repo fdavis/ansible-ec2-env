@@ -1,7 +1,0 @@
----
-- name: setup nx server
-  hosts: tag_Class_c9_server
-  user: root
-
-  tasks:
-    - include: tasks/setup.yml

@@ -1,4 +1,0 @@
----
-- name: yum pkgs install
-  yum: name=${item} state=installed
-  with_items: ${yum_pkgs}

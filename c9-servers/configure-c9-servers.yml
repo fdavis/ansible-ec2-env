@@ -1,6 +1,0 @@
----
-- name: configure c9 servers
-  hosts: tag_Class_c9_server
-  user: root
-
-- include: c9/setup.yml

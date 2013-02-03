@@ -1,6 +1,0 @@
----
-- name: configure ntp servers
-  hosts: tag_Class_ntp_server
-  user: root
-
-- include: ntp/setup.yml

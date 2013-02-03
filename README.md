@@ -28,19 +28,21 @@ A few commands I used tinkering:
 [1]: http://skvidal.wordpress.com/2012/11/02/euca-terminate-instances/
 
 TODO phase 1:
+
 * setup group allows fireball
 * refactor to use fireball
 * refactor installs, make grouplist
-1. Debugging Tools
-2. Development tools
-3. Scientific support
-4. TeX support
-5. Technical Writing
-6. X Window System
-7. Desktop
+  * Debugging Tools
+  * Development tools
+  * Scientific support
+  * TeX support
+  * Technical Writing
+  * X Window System
+  * Desktop
 * refactor installs, add nx freenx to default list, make default list nx server list
 
 TODO phase 2:
+
 * Test bring up with list of items
 * Add iptables firewall rule to allow tcp sport 5099 on all instances
 * setup auth server
@@ -50,6 +52,7 @@ TODO phase 2:
 * refactor playbook folders and dependencies etc... respectively
 
 TODO phase 3:
+
 * tack at least two different linux compute box
 * another yum probably amazon linux for now
 * ubuntu 10.04 LTS
@@ -58,5 +61,13 @@ TODO phase 3:
 
 
 TODO phase 4:
+
 * render queue
 * job queue
+
+Project has gotten stale... c9/auth isn't moving very quickly. Branching to render to dev on the blender render cluster
+TODO render branch:
+
+* master node
+* slave node
+* testing, further automation
