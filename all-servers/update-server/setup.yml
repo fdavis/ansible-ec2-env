@@ -4,4 +4,4 @@
   user: root
 
   tasks:
-    - command: yum update -y
+    - command: yum update -y -q

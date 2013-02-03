@@ -2,7 +2,6 @@
 - name: setup standard pkgs
   hosts: all
   user: root
-  connection: fireball 
 
   vars_files:
     - vars/main.yml

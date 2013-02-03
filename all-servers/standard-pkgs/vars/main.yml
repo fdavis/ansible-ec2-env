@@ -2,3 +2,4 @@
 yum_pkgs:
  - vim
  - tcpdump
+ - locate

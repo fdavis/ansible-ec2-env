@@ -5,3 +5,4 @@
 
 - include: update-server/setup.yml
 - include: standard-pkgs/setup.yml
+- include: epel/setup.yml

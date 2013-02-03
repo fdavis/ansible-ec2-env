@@ -6,7 +6,7 @@
        - freenx
 
 - name: yum group install X, Gnome
-  command: yum groupinstall -y ${item}
+  command: yum groupinstall -y -q ${item}
   with_items:
        - X Window System
        - Desktop

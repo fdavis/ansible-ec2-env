@@ -1,0 +1,8 @@
+---
+# An AMI from Centos.org: Centos 6 Updated: ami-f61630b3
+servers:
+  - keypair: ec2-ans
+    image: ami-f61630b3
+    instance_type: m1.medium
+    security_group: ec2-c9
+    tag: c9_server

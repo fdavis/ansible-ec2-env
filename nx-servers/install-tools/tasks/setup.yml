@@ -4,5 +4,5 @@
   with_items: ${yum_pkgs}
 
 - name: yum group install
-  command: yum groupinstall -y ${item}
+  command: yum groupinstall -y -q ${item}
   with_items: ${yum_groups}
