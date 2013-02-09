@@ -1,0 +1,4 @@
+---
+- include: all-servers/configure-standard-pkgs.yml
+- include: nx/configure-nx.yml
+- include: haproxy/setup.yml

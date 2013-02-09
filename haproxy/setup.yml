@@ -1,0 +1,10 @@
+---
+- name: grab setup data for haproxy
+  hosts: tag_Class_nx_server
+  user: root
+
+- name: configure haproxy
+  hosts: tag_Class_haproxy
+  user: root
+  tasks:
+    - include: tasks/setup.yml

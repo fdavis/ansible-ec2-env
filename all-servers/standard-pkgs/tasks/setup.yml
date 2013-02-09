@@ -1,3 +1,6 @@
 ---
 - yum: name=${item} state=installed
   with_items: ${yum_pkgs}
+
+- command: yum groupinstall -y -q "${item}"
+  with_items: ${yum_groups}

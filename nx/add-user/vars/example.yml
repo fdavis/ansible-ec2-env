@@ -1,0 +1,5 @@
+# username and password, these are passed to the ansible module 'user'
+# then the file should be renamed 'hidden.yml'
+---
+user_password: crypted_password
+user_name: johnd

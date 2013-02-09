@@ -2,4 +2,8 @@
 yum_pkgs:
  - vim
  - tcpdump
- - locate
+ - mlocate
+ - wget
+
+yum_groups:
+ - Development Tools

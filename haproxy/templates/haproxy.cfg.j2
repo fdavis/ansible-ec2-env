@@ -1,0 +1,30 @@
+# this config needs haproxy-1.1.28 or haproxy-1.2.1
+
+global
+	log 127.0.0.1	local0
+	log 127.0.0.1	local1 notice
+	#log loghost	local0 info
+	maxconn 4096
+	chroot /usr/share/haproxy
+	uid 99
+	gid 99
+	daemon
+	#debug
+	#quiet
+
+defaults
+	log	global
+	mode	tcp
+	option	dontlognull
+	option	tcplog
+	retries	3
+	maxconn	2000
+	contimeout	5000
+	clitimeout	50000
+	srvtimeout	50000
+
+listen	ssh-nx 0.0.0.0:2222
+	balance	roundrobin
+{% for host in groups['tag_Class_nx_server'] %}
+	server	{{ host }} {{ hostvars[host].ansible_default_ipv4.address }}:22
+{% endfor  %}
