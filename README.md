@@ -17,6 +17,23 @@ Disclaimer: This is an experiemental repo. Please use EC2 responsibly.
 
 ---
 
+My idea of folder structure here is:
+<pre>
+/root/
+  | - launch.sh #script to just launch ec2 instances
+  | - configure.sh #script to orchestrate... ##should just be a playbook now that they can include playbooks
+  | - launch-and-configure.sh #runs the above two scripts in order
+  |
+  | - bring-up/
+  |     |  - playbook to launch/tag ec2 instances
+  | - server roll/
+  |     |  - configure-server-roll-playbook.yml
+  |     |  - folder-1-playbook-todos/
+  |     |     | - setup.yml
+  |     |     | - {tasks,files,handlers,templates,vars,...}/
+  |     |  - other-folders-or-deps...   
+</pre>
+
 A few commands I used tinkering:
 * Make a key using: euca-create-keypair ec2-ans | tail -n+2 > key/ec2-ans.pem
 * Test Startup cmd: euca-run-instances -k nx_box ami-f61630b3
