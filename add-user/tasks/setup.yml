@@ -1,3 +1,0 @@
----
-- name: adding user
-  user: name=${user_name} password=${user_password} createhome=yes
